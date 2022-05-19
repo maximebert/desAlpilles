@@ -17,16 +17,16 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="center">
-                    <h1 className="logo">Madame Des Alpilles</h1>
+                    <a href="/"><h1 className="logo">Madame Des Alpilles</h1></a>
                 </div>
                 <div className="right">
                     <a href="" className="menuItem">Se connecter</a>
                     <a href="" className="menuItem">S'inscrire</a>
-                    <a href="" className="menuItem">
+                    <a href="" className="menuItem"><a href="/panier">
                          <Badge badgeContent={4} color="primary">
                         <ShoppingCartOutlined />
                         </Badge>
-
+                        </a>
                     </a>
                 </div>
             </div>
