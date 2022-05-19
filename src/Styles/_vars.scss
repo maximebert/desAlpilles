@@ -11,10 +11,3 @@ $spacing-lg: 32px;
 $borderRadius: 12px;
 $headerHeight: 100px;
 
-@mixin breakpoint($point) {
-    @if $point == md  {
-        @media (min-width: 55em) {
-            @content
-        }
-    }
-}
