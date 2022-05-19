@@ -4,7 +4,7 @@ export const sliderItems = [
       img: "https://www.cdiscount.com/pdt2/6/5/2/1/700x700/les3663684421652/rw/les-tropeziennes-grand-panier-en-paille-femme-av.jpg",
       title: "Collection été",
       desc: "Faites vous plaisir avec nos nouveaux paniers",
-      bg: "fff",
+      bg: "fbf0f4",
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ export const sliderItems = [
       id: 3,
       img: "https://i.ibb.co/cXFnLLV/3.png",
       title: "Nos robes pour l'été",
-      desc: "Pas d'escuses avec nos 20% de promos",
+      desc: "Pas d'escuses avec nos 20% de promos sur la collection bohème",
       bg: "fbf0f4",
     },
   ];
@@ -25,33 +25,39 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "SHIRT STYLE!",
+      img: "https://images.pexels.com/photos/2878761/pexels-photo-2878761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "FEMME",
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "LOUNGEWEAR LOVE",
+      img: "https://images.pexels.com/photos/5145180/pexels-photo-5145180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "HOMME",
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      title: "LIGHT JACKETS",
+      img: "https://images.pexels.com/photos/3845492/pexels-photo-3845492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "PITCHOUN",
     },
+    {
+      id: 4,
+      img: "https://images.pexels.com/photos/5591743/pexels-photo-5591743.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      title: "ACCESSOIRES",
+    },
+    
   ];
 
   export const popularProducts = [
     {
       id:1,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      img:"https://images.pexels.com/photos/4424210/pexels-photo-4424210.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     },
     {
       id:2,
-      img:"https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388",
+      img:"https://images.pexels.com/photos/4424302/pexels-photo-4424302.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     },
     {
       id:3,
-      img:"https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+      img:"https://images.pexels.com/photos/11515604/pexels-photo-11515604.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     },
     {
       id:4,
@@ -59,18 +65,26 @@ export const sliderItems = [
     },
     {
       id:5,
-      img:"https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+      img:"https://www.cdiscount.com/pdt2/7/7/0/1/700x700/mp02030770/rw/tshirt-homme-drole-imprime-manches-longues-3d-t-sh.jpg",
     },
     {
       id:6,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+      img:"https://mistertee.fr/sites/default/files/styles/mistertee_product_display_medium/public/perfectlogo.jpg",
     },
     {
       id:7,
-      img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+      img:"https://media.carteland.com/43460-zoom_fr/papa-le-meilleur.jpg",
     },
     {
       id:8,
-      img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+      img:"https://m.media-amazon.com/images/I/313tNdyTZeL.jpg",
+    },
+    {
+      id:9,
+      img:"https://m.media-amazon.com/images/I/51mI5m-MMQL._AC_SX425_.jpg",
+    },
+    {
+      id:10,
+      img:"https://www.jardiland.com/media/catalog/product/cache/image/470x470/e9c3970ab036de70892d86c6d221abfe/p/a/panier-ethnique-pompon-en-paille-beige-l45-x-l22-x-h29-cm-1544918-1.jpg",
     },
   ]
