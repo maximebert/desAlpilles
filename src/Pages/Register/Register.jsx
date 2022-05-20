@@ -65,8 +65,7 @@ const Register = () => {
           <Input placeholder="mot de passe" />
           <Input placeholder="confimation du mot de passe" />
           <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
+          En m'inscrivant, je reconnais avoir lu, compris et accepté les Conditions générales d'utilisation et de vente, ainsi que le Droit de rétractation (paragraphe 5) tout comme la protection des données.
           </Agreement>
           <Button>CREER</Button>
         </Form>

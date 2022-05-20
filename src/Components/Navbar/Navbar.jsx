@@ -20,14 +20,13 @@ const Navbar = () => {
                     <a href="/"><h1 className="logo">Madame Des Alpilles</h1></a>
                 </div>
                 <div className="right">
-                    <a href="" className="menuItem">Se connecter</a>
-                    <a href="" className="menuItem">S'inscrire</a>
-                    <a href="" className="menuItem"><a href="/panier">
+                    <a href="/connexion" className="menuItem">Se connecter</a>
+                    <a href="/inscription" className="menuItem">S'inscrire</a>
+                    <a href="/panier" className="menuItem">
                          <Badge badgeContent={4} color="primary">
                         <ShoppingCartOutlined />
                         </Badge>
                         </a>
-                    </a>
                 </div>
             </div>
 
