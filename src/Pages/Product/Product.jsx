@@ -133,9 +133,9 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Couleur</FilterTitle>
-              <FilterColor color="Noir" />
-              <FilterColor color="Bleu" />
-              <FilterColor color="Gris" />
+              <FilterColor color="blue" />
+              <FilterColor color="grey" />
+              <FilterColor color="black" />
             </Filter>
             <Filter>
               <FilterTitle>Taille</FilterTitle>
