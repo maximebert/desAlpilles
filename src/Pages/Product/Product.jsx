@@ -4,6 +4,10 @@ import Announcement from '../../Components/Annoucement/Annoucement';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import Newsletter from '../../Components/Newsletter/Newsletter';
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { publicRequest } from "../../resquest";
+// import axios from "axios";
 
 
 const Container = styled.div``;
@@ -112,49 +116,73 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+
+
+
+  useEffect(()=>{
+    const getProduct = async ()=>{
+      try{
+        const res = await publicRequest.get(`produit/${id}`)
+        setProduct(res.data);
+      }catch {}
+    }
+    getProduct();
+  },[id])
+
+  const handleQuantity = (type) =>{
+    if(type==="dec"){
+      quantity > 1 && setQuantity(quantity-1)
+    } else {
+      setQuantity(quantity+1)
+    }
+  };
+  const handleClick = () => {
+    //update cart
+  console.log(color, size, quantity)
+  };
   return (
     <Container>
     <Announcement />
       <Navbar />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Salopette Jean</Title>
+          <Title>{product.title}</Title>
           <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
-            iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
-            tristique tortor pretium ut. Curabitur elit justo, consequat id
-            condimentum ac, volutpat ornare.
+          {product.description}
           </Desc>
-          <Price>20€</Price>
+          <Price>{product.price} €</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Couleur</FilterTitle>
-              <FilterColor color="blue" />
-              <FilterColor color="grey" />
-              <FilterColor color="black" />
+              {product.color?.map((c) => {
+                <FilterColor color={c} key={c} onClick= {()=> setColor(c)}/>
+              })}
             </Filter>
             <Filter>
               <FilterTitle>Taille</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
+              <FilterSize onChange = {(e)=> setSize(e.target.value)}>
+              {product.size?.map((s) => {
+                <FilterSizeOption color={s} key={s}/>
+              })}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={()=>handleQuantity("dec")}/>
+              <Amount>{quantity}</Amount>
+              <Add onClick={()=>handleQuantity("inc")} />
             </AmountContainer>
-            <Button>Ajouter au panier</Button>
+            <Button onClick={handleClick}>Ajouter au panier</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

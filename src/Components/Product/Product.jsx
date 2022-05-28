@@ -3,7 +3,9 @@ import {
     SearchOutlined,
     ShoppingCartOutlined,
   } from "@material-ui/icons";
+
   import styled from "styled-components";
+ 
   
   const Info = styled.div`
     opacity: 0;
@@ -66,6 +68,7 @@ import {
   `;
   
   const Product = ({ item }) => {
+
     return (
       <Container>
         <Circle />
@@ -75,7 +78,7 @@ import {
             <ShoppingCartOutlined />
           </Icon>
           <Icon>
-            <a href="/produit"><SearchOutlined /></a>
+            <a href={`/produit/${item.id}`}><SearchOutlined /></a>
           </Icon>
           <Icon>
             <FavoriteBorderOutlined />
