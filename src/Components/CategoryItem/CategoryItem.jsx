@@ -1,3 +1,4 @@
+import { Link } from "@material-ui/core";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -46,7 +47,7 @@ const CategoryItem = ({ item }) => {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button><a href="/Femme">Visiter</a></Button>
+        <a href={`/produits/${item.categories}`}><Button>Visiter</Button></a>
       </Info>
     </Container>
   );

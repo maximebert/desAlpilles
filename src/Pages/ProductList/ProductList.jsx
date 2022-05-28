@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Announcement from '../../Components/Annoucement/Annoucement';
 import Footer from '../../Components/Footer/Footer';
@@ -36,6 +38,19 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+  const location =useLocation();
+  const cat = location.pathname.split("/")[2];
+  const [filter, setFilters] = useState({})
+
+  const [sort, setsorts] = useState("newest");
+
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilters ({ ...filter,
+      [e.target.name]: value
+    })
+  }
+  console.log(filter)
   return (
     <Container>
       <Announcement />
@@ -44,8 +59,8 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter par:</FilterText>
-          <Select>
-            <Option disabled selected>
+          <Select name= "color" onChange={handleFilters}>
+            <Option disabled>
               Couleur
             </Option>
             <Option>Blanc</Option>
@@ -55,8 +70,8 @@ const ProductList = () => {
             <Option>Jaune</Option>
             <Option>Vert</Option>
           </Select>
-          <Select>
-            <Option disabled selected>
+          <Select name= "size" onChange={handleFilters}>
+            <Option disabled>
               Taille
             </Option>
             <Option>XS</Option>
@@ -68,14 +83,14 @@ const ProductList = () => {
         </Filter>
         <Filter>
           <FilterText>Trier par:</FilterText>
-          <Select>
-            <Option selected>Nouveautées</Option>
-            <Option>Du plus cher au moins cher</Option>
-            <Option>Du moins cher au plus cher</Option>
+          <Select name= "color" onChange={(e) => setsorts(e.target.value)}>
+            <Option value="newest">Nouveautées</Option>
+            <Option value="desc">Du plus cher au moins cher</Option>
+            <Option value="asc">Du moins cher au plus cher</Option>
           </Select>
         </Filter>
       </FilterContainer>
-      <Products />
+      <Products cat = {cat} filter={filter} sort = {sort}/>
       <Newsletter />
       <Footer />
     </Container>

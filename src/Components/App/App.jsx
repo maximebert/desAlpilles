@@ -22,7 +22,7 @@ function App() {
         {/* route public */}
         <Route path="/" element={<Home />} />
         <Route path="/pannier" element={<Cart />} />
-        <Route path="/Femme" element={<ProductList />} />
+        <Route path="/produits/:categorie" element={<ProductList />} />
         <Route path="/produit/:id" element={<Product />} />
         <Route path="/panier" element={<Cart />} />
         <Route path="/inscription" element={<Register />} />
