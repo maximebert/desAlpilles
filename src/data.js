@@ -1,25 +1,26 @@
 export const sliderItems = [
-    {
-      id: 1,
-      img: "https://www.cdiscount.com/pdt2/6/5/2/1/700x700/les3663684421652/rw/les-tropeziennes-grand-panier-en-paille-femme-av.jpg",
+  {
+    id: 1,
+    img: "https://i.ibb.co/cXFnLLV/3.png",
+    title: "Nos robes pour l'été",
+    desc: "Pas d'escuses avec nos 20% de promos sur la collection bohème",
+    bg: "fbf0f4",
+  },
+  {
+      id: 2,
+      img: "https://media.cdnws.com/_i/111316/511/729/11/dsc0106.jpeg",
       title: "Collection été",
       desc: "Faites vous plaisir avec nos nouveaux paniers",
-      bg: "fbf0f4",
+      bg: "E5E7EB",
     },
     {
-      id: 2,
+      id: 3,
       img: "https://www.square-up.fr/21336-large_default/tshirt-homme-papa-au-rhum-blanc.jpg",
       title: "Collection homme",
       desc: "Des nouveautées en Pagaye!",
       bg: "fcf1ed",
     },
-    {
-      id: 3,
-      img: "https://i.ibb.co/cXFnLLV/3.png",
-      title: "Nos robes pour l'été",
-      desc: "Pas d'escuses avec nos 20% de promos sur la collection bohème",
-      bg: "fbf0f4",
-    },
+
   ];
 
   export const categories = [
@@ -27,21 +28,25 @@ export const sliderItems = [
       id: 1,
       img: "https://images.pexels.com/photos/2878761/pexels-photo-2878761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       title: "FEMME",
+      categories: "femme"
     },
     {
       id: 2,
       img: "https://images.pexels.com/photos/5145180/pexels-photo-5145180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       title: "HOMME",
+      categories: "homme"
     },
     {
       id: 3,
       img: "https://images.pexels.com/photos/3845492/pexels-photo-3845492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: "PITCHOUN",
+      title: "ENFANT",
+      categories: "enfant"
     },
     {
       id: 4,
       img: "https://images.pexels.com/photos/5591743/pexels-photo-5591743.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       title: "ACCESSOIRES",
+      categories: "accessoires"
     },
     
   ];
