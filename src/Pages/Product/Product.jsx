@@ -7,6 +7,9 @@ import Newsletter from '../../Components/Newsletter/Newsletter';
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { publicRequest } from "../../resquest";
+import { addProduct } from "../../redux/cartRedux";
+import { useDispatch } from "react-redux";
+
 // import axios from "axios";
 
 
@@ -122,6 +125,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
+  const dispatch = useDispatch();
 
 
 
@@ -143,8 +147,8 @@ const Product = () => {
     }
   };
   const handleClick = () => {
-    //update cart
-  console.log(color, size, quantity)
+    dispatch
+    (addProduct({...product, quantity, color, size }))
   };
   return (
     <Container>
