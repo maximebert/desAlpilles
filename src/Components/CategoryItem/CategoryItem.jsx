@@ -1,5 +1,6 @@
-import { Link } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 
 const Container = styled.div`
   flex: 1;
@@ -12,6 +13,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  ${mobile({ height: "20vh" })}
 `;
 
 const Info = styled.div`
@@ -29,7 +31,6 @@ const Info = styled.div`
 const Title = styled.h1`
     color:white;
     margin-bottom: 20px;
-    font-size: 2em;
 `;
 
 const Button = styled.button`
@@ -44,11 +45,13 @@ const Button = styled.button`
 const CategoryItem = ({ item }) => {
   return (
     <Container>
+      <Link to={`/produits/${item.cat}`}>
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <a href={`/produits/${item.categories}`}><Button>Visiter</Button></a>
+        <Button>VOIR</Button>
       </Info>
+      </Link>
     </Container>
   );
 };
