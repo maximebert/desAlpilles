@@ -1,9 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-
-import log from "../../redux/apiCalls"
+import { login } from "../../redux/apiCalls";
+import { mobile } from "../../responsive";
+import { useDispatch, useSelector } from "react-redux";
 
 const Container = styled.div`
   width: 100vw;
@@ -24,6 +23,7 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
+  ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
@@ -51,8 +51,8 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
-  &:disabled{
-    color:green;
+  &:disabled {
+    color: green;
     cursor: not-allowed;
   }
 `;
@@ -65,31 +65,39 @@ const Link = styled.a`
 `;
 
 const Error = styled.span`
-  color:red;
-`
+  color: red;
+`;
 
 const Login = () => {
-  const [username,setUsername]= useState("");
-  const[password,setPassword]= useState("");
-  const dispatch = useDispatch;
-  const {isFetching, error} = useSelector((state)=> state.user)
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
     e.preventDefault();
-    log(dispatch, {username, password});
-  }
-
+    login(dispatch, { username, password });
+  };
   return (
     <Container>
       <Wrapper>
-        <Title>Se Connecter</Title>
+        <Title>SIGN IN</Title>
         <Form>
-          <Input placeholder="Nom d'utilisateur" onChange={(e)=>setUsername(e.target.value)}/>
-          <Input placeholder="Mot de passe" type="password" onChange={(e)=>setPassword(e.target.value)}/>
-          <Button onClick={handleClick} disabled={isFetching}>Se Connecter</Button>
-          {error && <Error>Il semble qu'il y ait un soucis</Error>}
-          <Link>Mot de passe oublié?</Link>
-          <Link>Pas encore de compte?</Link>
+          <Input
+            placeholder="nom d'utilisateur"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Input
+            placeholder="mot de passe"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button onClick={handleClick} disabled={isFetching}>
+            SE CONNECTER
+          </Button>
+          {error && <Error>Un problème?</Error>}
+          <Link>MOT DE PASSE OUBLIÉ?</Link>
+          <Link>S'INSCRIRE</Link>
         </Form>
       </Wrapper>
     </Container>

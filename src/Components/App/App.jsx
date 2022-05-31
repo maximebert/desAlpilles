@@ -8,15 +8,16 @@ import Cart from "../../Pages/Cart/Cart";
 import Register from "../../Pages/Register/Register";
 import Login from "../../Pages/Login/Login";
 import Error from "../Error/Error";
+import Success from "../../Pages/Success/Success";
 
 
 // styles
-import "../../Styles/index.scss";
 import "./app.scss";
 import { useSelector } from "react-redux";
 
 function App() {
   const user = useSelector(state=>state.user.currentUser);
+  console.log(user)
   return (
     <div className="App">
       <BrowserRouter >
@@ -29,6 +30,7 @@ function App() {
         <Route path="/panier" element={<Cart />} />
         <Route path="/inscription" element={<Register />} />
         <Route path="/connexion" element={<Login />} />
+        <Route path="/succes" element={<Success />} />
         <Route path="*" element={<Error />} />
       </Routes>
       </BrowserRouter >
