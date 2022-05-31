@@ -13,8 +13,10 @@ import Error from "../Error/Error";
 // styles
 import "../../Styles/index.scss";
 import "./app.scss";
+import { useSelector } from "react-redux";
 
 function App() {
+  const user = useSelector(state=>state.user.currentUser);
   return (
     <div className="App">
       <BrowserRouter >

@@ -1,4 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
+import log from "../../redux/apiCalls"
 
 const Container = styled.div`
   width: 100vw;
@@ -46,6 +51,10 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
+  &:disabled{
+    color:green;
+    cursor: not-allowed;
+  }
 `;
 
 const Link = styled.a`
@@ -55,15 +64,30 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
+const Error = styled.span`
+  color:red;
+`
+
 const Login = () => {
+  const [username,setUsername]= useState("");
+  const[password,setPassword]= useState("");
+  const dispatch = useDispatch;
+  const {isFetching, error} = useSelector((state)=> state.user)
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    log(dispatch, {username, password});
+  }
+
   return (
     <Container>
       <Wrapper>
         <Title>Se Connecter</Title>
         <Form>
-          <Input placeholder="Nom d'utilisateur" />
-          <Input placeholder="Mot de passe" />
-          <Button>Se Connecter</Button>
+          <Input placeholder="Nom d'utilisateur" onChange={(e)=>setUsername(e.target.value)}/>
+          <Input placeholder="Mot de passe" type="password" onChange={(e)=>setPassword(e.target.value)}/>
+          <Button onClick={handleClick} disabled={isFetching}>Se Connecter</Button>
+          {error && <Error>Il semble qu'il y ait un soucis</Error>}
           <Link>Mot de passe oublié?</Link>
           <Link>Pas encore de compte?</Link>
         </Form>

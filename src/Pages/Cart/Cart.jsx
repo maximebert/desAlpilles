@@ -1,8 +1,12 @@
 import { Add, Remove } from "@material-ui/icons";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Announcement from '../../Components/Annoucement/Annoucement';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
+import StripeCheckout from 'react-stripe-checkout'
+
+const KEY = process.env.REACT_APP_STRIPE;
 
 
 const Container = styled.div``;
@@ -153,6 +157,7 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  const cart = useSelector(state=>state.cart)
   return (
     <Container>
       <Announcement />
@@ -169,63 +174,38 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            <Product>
+        {cart.products.map(product=>(<Product>
               <ProductDetail>
-                <Image src="https://m.media-amazon.com/images/I/81PUlESR8xL._AC_SL1500_.jpg" />
+                <Image src={product.img} />
                 <Details>
                   <ProductName>
-                    <b>Produit:</b> Panier naturel
+                    <b>Produit:</b> {product.title}
                   </ProductName>
                   <ProductId>
-                    <b>ID:</b> 93813718293
+                    <b>ID:</b> {product.id}
                   </ProductId>
-                  <ProductColor color="black" />
+                  <ProductColor color={product.color} />
                   <ProductSize>
-                    <b>Taille:</b> moyen
+                    <b>Taille:</b> {product.size}
                   </ProductSize>
                 </Details>
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
                   <Add />
-                  <ProductAmount>2</ProductAmount>
+                  <ProductAmount>{product.quantity}</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
-                <ProductPrice>30€</ProductPrice>
+                <ProductPrice>{product.price * product.quantity}€</ProductPrice>
               </PriceDetail>
-            </Product>
-            <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src="https://img01.ztat.net/article/spp-media-p1/bda93d5d925948c3be4ba2149f5c348c/fb6af44945c74492a42e7fefc6dcf501.jpg?imwidth=1800&filter=packshot" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> Polo homme
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="yellow" />
-                  <ProductSize>
-                    <b>Taille:</b> M
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>20€</ProductPrice>
-              </PriceDetail>
-            </Product>
+            </Product>))}
+            <Hr /> 
           </Info>
           <Summary>
             <SummaryTitle>Votre Commande</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Sous total</SummaryItemText>
-              <SummaryItemPrice>80€</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total}€</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Expedition</SummaryItemText>
@@ -237,7 +217,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>80€</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total}€</SummaryItemPrice>
             </SummaryItem>
             <Button>Commander</Button>
           </Summary>
