@@ -4,11 +4,9 @@ import styled from "styled-components";
 import Announcement from '../../Components/Annoucement/Annoucement';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
-import StripeCheckout from 'react-stripe-checkout'
 import { useEffect, useState } from "react";
 import { userRequest } from "../../resquest";
 import { mobile } from "../../responsive";
-const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -183,8 +181,9 @@ const Cart = () => {
       <Wrapper>
         <Title>VOS FAVORIS</Title>
         <Top>
+            <a href="/">
           <TopButton>CONTINUEZ A DÉCOUVRIR NOS PANIERS </TopButton>
-
+          </a>
         </Top>
         <Bottom>
           <Info>

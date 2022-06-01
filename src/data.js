@@ -27,20 +27,20 @@ export const sliderItems = [
     {
       id: 1,
       img: "https://images.pexels.com/photos/2878761/pexels-photo-2878761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: "FEMME",
-      cat: "femme"
+      title: "MODÈLES UNIQUE",
+      cat: "UNIQUE"
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/5145180/pexels-photo-5145180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: "HOMME",
-      cat: "homme"
+      img: "https://images.pexels.com/photos/6913841/pexels-photo-6913841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "MODÈLES PERSONNALISÉ",
+      cat: "PERSONNALISE"
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/3845492/pexels-photo-3845492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: "ENFANT",
-      cat: "enfant"
+      img: "https://media.istockphoto.com/photos/knitting-and-knitting-needles-on-a-wooden-surface-picture-id915992642?k=20&m=915992642&s=612x612&w=0&h=alIHEeeFMBC3lmqxqkblv2_YVsbWK9n0Cu5MvPq22wU=",
+      title: "AUTRES REALISATION",
+      cat: "AUTRE"
     },
  
   ];
