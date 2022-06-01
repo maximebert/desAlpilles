@@ -42,16 +42,10 @@ export const sliderItems = [
       title: "ENFANT",
       cat: "enfant"
     },
-    {
-      id: 4,
-      img: "https://images.pexels.com/photos/5591743/pexels-photo-5591743.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: "ACCESSOIRES",
-      cat: "accessoires"
-    },
-    
+ 
   ];
 
-  export const popularProducts = [
+  export const items = [
     {
       id:1,
       img:"https://images.pexels.com/photos/4424210/pexels-photo-4424210.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",

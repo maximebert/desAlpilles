@@ -181,10 +181,10 @@ const Cart = () => {
       <Announcement />
       <Navbar />
       <Wrapper>
-        <Title>VOTRE PANNIER</Title>
+        <Title>VOS FAVORIS</Title>
         <Top>
-          <TopButton>CONTINUER VOTRE SHOPPING</TopButton>
-          <TopButton type="filled">ANNULATION</TopButton>
+          <TopButton>CONTINUEZ A DÉCOUVRIR NOS PANIERS </TopButton>
+
         </Top>
         <Bottom>
           <Info>
@@ -194,15 +194,12 @@ const Cart = () => {
                   <Image src={product.img} />
                   <Details>
                     <ProductName>
-                      <b>ProduIT:</b> {product.title}
+                      <b>Panier:</b> {product.title}
                     </ProductName>
                     <ProductId>
                       <b>REF:</b> {product._id}
                     </ProductId>
                     <ProductColor color={product.color} />
-                    <ProductSize>
-                      <b>TAILLE:</b> {product.size}
-                    </ProductSize>
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
@@ -221,34 +218,11 @@ const Cart = () => {
           </Info>
           <Summary>
             <SummaryTitle>RECAPITULATIF</SummaryTitle>
-            <SummaryItem>
-              <SummaryItemText>SOUS TOTAL</SummaryItemText>
-              <SummaryItemPrice> {cart.total} €</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>FRAIS DE PORT</SummaryItemText>
-              <SummaryItemPrice> 5.90 €</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>PROMOTIONS</SummaryItemText>
-              <SummaryItemPrice>-5.90 €</SummaryItemPrice>
-            </SummaryItem>
+
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>{cart.total} € </SummaryItemPrice>
             </SummaryItem>
-            <StripeCheckout
-              name="MADAME DES ALPILLES"
-              image=""
-              billingAddress
-              shippingAddress
-              description={`total ${cart.total} € `}
-              amount={cart.total * 100}
-              token={onToken}
-              stripeKey={KEY}
-            >
-              <Button>COMMANDER</Button>
-            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>

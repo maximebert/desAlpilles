@@ -7,6 +7,7 @@ import {
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../../responsive";
+import "./footer.scss"
 
 const Container = styled.div`
   display: flex;
@@ -56,12 +57,11 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  align-items: center;
 `;
 
 const ListItem = styled.li`
-  width: 50%;
+  width: 100%;
   margin-bottom: 10px;
 `;
 
@@ -73,7 +73,9 @@ const Right = styled.div`
 
 const ContactItem = styled.div`
   margin-bottom: 20px;
+  padding-left: 5em;
   display: flex;
+  text-align: center;
   align-items: center;
 `;
 
@@ -101,16 +103,12 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium optio dolo
         <Center>
           <Title>Liens Utile</Title>
           <List>
+            <a href="/">
             <ListItem>Accueil</ListItem>
-            <ListItem>Panier</ListItem>
-            <ListItem>Homme</ListItem>
-            <ListItem>Femme</ListItem>
-            <ListItem>Enfant</ListItem>
-            <ListItem>Accessoire</ListItem>
-            <ListItem>Mon Compte</ListItem>
-            <ListItem>Suivi de ma commande</ListItem>
-            <ListItem>Liste d'envies</ListItem>
+            </a>
+            <a href="/conditions">
             <ListItem>Conditions génerales</ListItem>
+            </a>
           </List>
         </Center>
         <Right>
@@ -124,7 +122,6 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium optio dolo
           <ContactItem>
             <MailOutline style={{marginRight:"10px"}} /> j.forest@gmail.com
           </ContactItem>
-          <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Right>
       </Container>
     );
