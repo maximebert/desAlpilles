@@ -77,7 +77,9 @@ const Navbar = () => {
   
         </Left>
         <Center>
+          <a href="/">
           <Logo>MADAME DES ALPILLES</Logo>
+          </a>
         </Center>
         <Right>
           <Link to="/favoris">

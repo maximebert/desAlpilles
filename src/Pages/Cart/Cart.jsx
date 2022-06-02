@@ -182,7 +182,7 @@ const Cart = () => {
         <Title>VOS FAVORIS</Title>
         <Top>
             <a href="/">
-          <TopButton>CONTINUEZ A DÉCOUVRIR NOS PANIERS </TopButton>
+          <TopButton>RETOUR AUX CRÉATIONS </TopButton>
           </a>
         </Top>
         <Bottom>

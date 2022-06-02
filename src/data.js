@@ -7,18 +7,18 @@ export const sliderItems = [
     bg: "fbf0f4",
   },
   {
-      id: 2,
+    id: 2,
+    img: "https://www.square-up.fr/21336-large_default/tshirt-homme-papa-au-rhum-blanc.jpg",
+    title: "Collection homme",
+    desc: "Des nouveautées en Pagaye!",
+    bg: "fcf1ed",
+  },
+  {
+      id: 3,
       img: "https://media.cdnws.com/_i/111316/511/729/11/dsc0106.jpeg",
       title: "Collection été",
       desc: "Faites vous plaisir avec nos nouveaux paniers",
       bg: "E5E7EB",
-    },
-    {
-      id: 3,
-      img: "https://www.square-up.fr/21336-large_default/tshirt-homme-papa-au-rhum-blanc.jpg",
-      title: "Collection homme",
-      desc: "Des nouveautées en Pagaye!",
-      bg: "fcf1ed",
     },
 
   ];
@@ -34,13 +34,19 @@ export const sliderItems = [
       id: 2,
       img: "https://images.pexels.com/photos/6913841/pexels-photo-6913841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       title: "MODÈLES PERSONNALISÉ",
-      cat: "PERSONNALISE"
+      cat: "PERSONNALISATION"
     },
     {
       id: 3,
+      img: "https://images.pexels.com/photos/4846363/pexels-photo-4846363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "AUTRES RÉALISATION",
+      cat: "DIVERS"
+    },
+    {
+      id: 4,
       img: "https://media.istockphoto.com/photos/knitting-and-knitting-needles-on-a-wooden-surface-picture-id915992642?k=20&m=915992642&s=612x612&w=0&h=alIHEeeFMBC3lmqxqkblv2_YVsbWK9n0Cu5MvPq22wU=",
-      title: "AUTRES REALISATION",
-      cat: "AUTRE"
+      title: "CRÉER VOTRE PANIER",
+      cat: "atelier"
     },
  
   ];
