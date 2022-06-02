@@ -7,6 +7,8 @@ import Navbar from '../../Components/Navbar/Navbar';
 import { useEffect, useState } from "react";
 import { userRequest } from "../../resquest";
 import { mobile } from "../../responsive";
+import { removeProduct } from "../../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
 
@@ -155,25 +157,16 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
+
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  const [stripeToken, setStripeToken] = useState(null);
+  const dispatch = useDispatch();
 
-  const onToken = (token) => {
-    setStripeToken(token);
+  const handleClick = () => {
+    dispatch(
+      removeProduct({})
+    );
   };
-
-  useEffect(() => {
-    const makeRequest = async () => {
-      try {
-        const res = await userRequest.post("/checkout/payment", {
-          tokenId: stripeToken.id,
-          amount: 500,
-        });
-      } catch {}
-    };
-    stripeToken && makeRequest();
-  }, [stripeToken, cart.total]);
   return (
     <Container>
       <Announcement />
@@ -203,7 +196,7 @@ const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add />
+                    <Add onClick={handleClick}/>
                     <ProductAmount>{product.quantity}</ProductAmount>
                     <Remove />
                   </ProductAmountContainer>

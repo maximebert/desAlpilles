@@ -9,6 +9,7 @@ import Register from "../../Pages/Register/Register";
 import Login from "../../Pages/Login/Login";
 import Error from "../Error/Error";
 import Success from "../../Pages/Success/Success";
+import Custom from "../../Pages/Custom/Custom";
 
 
 // styles
@@ -25,6 +26,7 @@ function App() {
         {/* route public */}
         <Route path="/" element={<Home />} />
         <Route path="/pannier" element={<Cart />} />
+        <Route path="/produits/atelier" element={<Custom />} />
         <Route path="/produits/:categorie" element={<ProductList />} />
         <Route path="/produit/:id" element={<Product />} />
         <Route path="/favoris" element={<Cart />} />
