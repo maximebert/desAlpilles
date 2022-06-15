@@ -17,8 +17,6 @@ import "./app.scss";
 import { useSelector } from "react-redux";
 
 function App() {
-  const user = useSelector(state=>state.user.currentUser);
-  console.log(user)
   return (
     <div className="App">
       <BrowserRouter >

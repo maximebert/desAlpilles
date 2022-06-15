@@ -5,7 +5,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 import Newsletter from '../../Components/Newsletter/Newsletter';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { addProduct } from "../../redux/cartRedux";
+//import { addProduct } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { mobile } from "../../responsive";
 import axios from 'axios'
@@ -87,7 +87,7 @@ const Product = () => {
 
   const handleClick = () => {
     dispatch(
-      addProduct({ ...product })
+  
     );
   };
   return (

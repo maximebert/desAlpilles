@@ -7,7 +7,6 @@ import Navbar from '../../Components/Navbar/Navbar';
 import { useEffect, useState } from "react";
 import { userRequest } from "../../resquest";
 import { mobile } from "../../responsive";
-import { removeProduct } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
@@ -161,12 +160,6 @@ const Button = styled.button`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(
-      removeProduct({})
-    );
-  };
   return (
     <Container>
       <Announcement />
@@ -196,7 +189,10 @@ const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add onClick={handleClick}/>
+                    <Button type="button" onClick={() => dispatch({
+                      type: "cat/deleteProduct",
+                      payload: product.id,
+                    })}/>
                     <ProductAmount>{product.quantity}</ProductAmount>
                     <Remove />
                   </ProductAmountContainer>
