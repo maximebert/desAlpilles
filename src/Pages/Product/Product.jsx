@@ -5,7 +5,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 import Newsletter from '../../Components/Newsletter/Newsletter';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-//import { addProduct } from "../../redux/cartRedux";
+import { addProduct } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { mobile } from "../../responsive";
 import axios from 'axios'
@@ -72,13 +72,12 @@ const Button = styled.button`
 const Product = () => {
 
   const [product, setProduct] = useState([]);
-  console.log(product);
   const dispatch = useDispatch();
   const params = useParams();
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/produit/${params.id}`);
+        const res = await axios.get(`http://localhost:5001/produit/${params.id}`);
         setProduct(res.data[0]);  
        } catch {}
       };
@@ -87,7 +86,7 @@ const Product = () => {
 
   const handleClick = () => {
     dispatch(
-  
+        addProduct(product)
     );
   };
   return (

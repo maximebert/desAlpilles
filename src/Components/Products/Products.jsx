@@ -17,7 +17,7 @@ const Products = ({cat}) => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/produits/${cat}`
+        `http://localhost:5001/produits/${cat}`
       )
       .then((res) => setProductData(res.data));
   }, [cat]);

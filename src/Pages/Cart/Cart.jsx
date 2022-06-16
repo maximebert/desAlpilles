@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { userRequest } from "../../resquest";
 import { mobile } from "../../responsive";
 import { useDispatch } from "react-redux";
+import { deleteProduct } from "../../redux/cartRedux";
 
 const Container = styled.div``;
 
@@ -158,7 +159,7 @@ const Button = styled.button`
 
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector(state=> state.cart.products);
   const dispatch = useDispatch();
   return (
     <Container>
@@ -173,7 +174,7 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            {cart.products.map((product) => (
+            {cart.map((product) => (
               <Product>
                 <ProductDetail>
                   <Image src={product.img} />
@@ -182,19 +183,17 @@ const Cart = () => {
                       <b>Panier:</b> {product.title}
                     </ProductName>
                     <ProductId>
-                      <b>REF:</b> {product._id}
+                      <b>REF:</b> {product.id}
                     </ProductId>
                     <ProductColor color={product.color} />
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Button type="button" onClick={() => dispatch({
-                      type: "cat/deleteProduct",
-                      payload: product.id,
-                    })}/>
+                    <Button onClick={() => dispatch(
+                      deleteProduct(product)
+                    )}  />
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
                   </ProductAmountContainer>
                   <ProductPrice>
                     {product.price * product.quantity} €
