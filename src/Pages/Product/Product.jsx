@@ -104,7 +104,7 @@ const Product = () => {
 
           <AddContainer>
 
-            <Button onClick={handleClick}>Ajouter au favoris</Button>
+            <Button onClick={handleClick}>Ajouter au Panier</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

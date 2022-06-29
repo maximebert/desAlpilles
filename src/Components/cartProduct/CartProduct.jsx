@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { deleteProduct } from "../../redux/cartRedux";
 import { mobile } from "../../responsive";
-
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Container = styled.div``;
 
@@ -145,11 +145,10 @@ const SummaryItemText = styled.span``;
 const SummaryItemPrice = styled.span``;
 
 const Button = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: black;
-  color: white;
-  font-weight: 600;
+border: none;
+background: none;
+cursor: pointer;
+
 `;
 const CartProduct = ({product}) => {
     const dispatch = useDispatch();
@@ -175,7 +174,9 @@ const CartProduct = ({product}) => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Button onClick={handleClick}  />
+                    <Button>
+                    <DeleteIcon onClick={handleClick}  />
+                    </Button>
                     <ProductAmount>{product.quantity}</ProductAmount>
                   </ProductAmountContainer>
                   <ProductPrice>

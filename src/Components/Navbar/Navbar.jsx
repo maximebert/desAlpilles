@@ -1,11 +1,10 @@
 import { Badge } from "@material-ui/core";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Container = styled.div`
   height: 60px;
@@ -86,7 +85,7 @@ const Navbar = () => {
           <Link to="/favoris">
           <MenuItem>
             <Badge badgeContent={quantity} color="primary">
-              <FavoriteBorderIcon />
+              <ShoppingCartIcon />
             </Badge>
           </MenuItem>
           </Link>
