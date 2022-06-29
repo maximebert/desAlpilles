@@ -151,17 +151,8 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-const Button = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: black;
-  color: white;
-  font-weight: 600;
-`;
-
-
 const Cart = () => {
-  const cart = useSelector(state=> state.cart.products);
+  const cart = useSelector(state=> state.cart);
   return (
     <Container>
       <Announcement />
@@ -180,7 +171,7 @@ const Cart = () => {
 
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>{cart} € </SummaryItemPrice>
+              <SummaryItemPrice>{} € </SummaryItemPrice>
             </SummaryItem>
           </Summary>
         </Bottom>

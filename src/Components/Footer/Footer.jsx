@@ -101,7 +101,7 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium optio dolo
           </SocialContainer>
         </Left>
         <Center>
-          <Title>Liens Utile</Title>
+          <Title>Plan du Site</Title>
           <List>
             <a href="/">
             <ListItem>Accueil</ListItem>
@@ -114,13 +114,13 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium optio dolo
         <Right>
           <Title>Contact</Title>
           <ContactItem>
-            <Room style={{marginRight:"10px"}}/> 3 impasse des Tonneliers
+            <Room style={{marginRight:"10px"}}/> 3 rue jean jaures
           </ContactItem>
           <ContactItem>
             <Phone style={{marginRight:"10px"}}/> 061400000
           </ContactItem>
           <ContactItem>
-            <MailOutline style={{marginRight:"10px"}} /> j.forest@gmail.com
+            <MailOutline style={{marginRight:"10px"}} /> desalpilles@gmail.com
           </ContactItem>
         </Right>
       </Container>
