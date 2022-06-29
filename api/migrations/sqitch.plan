@@ -1,4 +1,0 @@
-%syntax-version=1.0.0
-%project=opet
-
-initdb 2022-03-29T13:28:12Z maximebert <maximebertinelli@gmail.com> # creation des tables

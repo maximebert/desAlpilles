@@ -1,16 +1,10 @@
-import { Add, Remove } from "@material-ui/icons";
-import { useSelector } from "react-redux";
+import React from 'react';
 import styled from "styled-components";
-import Announcement from '../../Components/Annoucement/Annoucement';
-import Footer from '../../Components/Footer/Footer';
-import Navbar from '../../Components/Navbar/Navbar';
-import { useEffect, useState } from "react";
-import { userRequest } from "../../resquest";
-import { mobile } from "../../responsive";
 import { useDispatch } from "react-redux";
 import { deleteProduct } from "../../redux/cartRedux";
+import { mobile } from "../../responsive";
 import CartProduct from "../../Components/cartProduct/CartProduct";
-import CartList from "../../Components/cartList/CartList";
+import { useSelector } from "react-redux";
 
 const Container = styled.div``;
 
@@ -126,68 +120,16 @@ const Hr = styled.hr`
   border: none;
   height: 1px;
 `;
-
-const Summary = styled.div`
-  flex: 1;
-  border: 0.5px solid lightgray;
-  border-radius: 10px;
-  padding: 20px;
-  height: 50vh;
-`;
-
-const SummaryTitle = styled.h1`
-  font-weight: 200;
-`;
-
-const SummaryItem = styled.div`
-  margin: 30px 0px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: ${(props) => props.type === "total" && "500"};
-  font-size: ${(props) => props.type === "total" && "24px"};
-`;
-
-const SummaryItemText = styled.span``;
-
-const SummaryItemPrice = styled.span``;
-
-const Button = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: black;
-  color: white;
-  font-weight: 600;
-`;
-
-
-const Cart = () => {
-  const cart = useSelector(state=> state.cart.products);
-  return (
-    <Container>
-      <Announcement />
-      <Navbar />
-      <Wrapper>
-        <Title>VOS FAVORIS</Title>
-        <Top>
-            <a href="/">
-          <TopButton>RETOUR AUX CRÉATIONS </TopButton>
-          </a>
-        </Top>
-        <Bottom>
-      <CartList/>
-          <Summary>
-            <SummaryTitle>RECAPITULATIF</SummaryTitle>
-
-            <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>{cart} € </SummaryItemPrice>
-            </SummaryItem>
-          </Summary>
-        </Bottom>
-      </Wrapper>
-      <Footer />
-    </Container>
-  );
+const CartList = () => {
+    const cart = useSelector(state=> state.cart);
+    return (
+        <Info>
+        {cart?.map((product) => (
+          <CartProduct key={product.id} product={product} />
+        ))}
+        <Hr />
+      </Info>
+    );
 };
 
-export default Cart;
+export default CartList;

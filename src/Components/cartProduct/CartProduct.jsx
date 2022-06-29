@@ -1,16 +1,9 @@
-import { Add, Remove } from "@material-ui/icons";
-import { useSelector } from "react-redux";
+import React from 'react';
 import styled from "styled-components";
-import Announcement from '../../Components/Annoucement/Annoucement';
-import Footer from '../../Components/Footer/Footer';
-import Navbar from '../../Components/Navbar/Navbar';
-import { useEffect, useState } from "react";
-import { userRequest } from "../../resquest";
-import { mobile } from "../../responsive";
 import { useDispatch } from "react-redux";
 import { deleteProduct } from "../../redux/cartRedux";
-import CartProduct from "../../Components/cartProduct/CartProduct";
-import CartList from "../../Components/cartList/CartList";
+import { mobile } from "../../responsive";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Container = styled.div``;
 
@@ -152,42 +145,47 @@ const SummaryItemText = styled.span``;
 const SummaryItemPrice = styled.span``;
 
 const Button = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: black;
-  color: white;
-  font-weight: 600;
+border: none;
+background: none;
+cursor: pointer;
+
 `;
-
-
-const Cart = () => {
-  const cart = useSelector(state=> state.cart.products);
-  return (
-    <Container>
-      <Announcement />
-      <Navbar />
-      <Wrapper>
-        <Title>VOS FAVORIS</Title>
-        <Top>
-            <a href="/">
-          <TopButton>RETOUR AUX CRÉATIONS </TopButton>
-          </a>
-        </Top>
-        <Bottom>
-      <CartList/>
-          <Summary>
-            <SummaryTitle>RECAPITULATIF</SummaryTitle>
-
-            <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>{cart} € </SummaryItemPrice>
-            </SummaryItem>
-          </Summary>
-        </Bottom>
-      </Wrapper>
-      <Footer />
-    </Container>
-  );
+const CartProduct = ({product}) => {
+    const dispatch = useDispatch();
+    const handleClick = () =>{
+      dispatch(
+        deleteProduct(product.title)
+      )
+    }
+    return (
+        
+                          <Product>
+                <ProductDetail>
+                  <Image src={product.img} />
+                  <Details>
+                    <ProductName>
+                      <b>Panier:</b> {product.title}
+                    </ProductName>
+                    <ProductId>
+                      <b>REF:</b> {product.id}
+                    </ProductId>
+                    <ProductColor color={product.color} />
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductAmountContainer>
+                    <Button>
+                    <DeleteIcon onClick={handleClick}  />
+                    </Button>
+                    <ProductAmount>{product.quantity}</ProductAmount>
+                  </ProductAmountContainer>
+                  <ProductPrice>
+                    {product.price} €
+                  </ProductPrice>
+                </PriceDetail>
+              </Product>
+    
+    );
 };
 
-export default Cart;
+export default CartProduct;

@@ -1,10 +1,10 @@
 import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Container = styled.div`
   height: 60px;
@@ -69,31 +69,23 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
-  const quantity = useSelector(state=>state.cart.quantity)
+  const quantity = useSelector(state=>state.cart.length)
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Language>FR</Language>
-          <SearchContainer>
-            <Input placeholder="Recherche" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
+  
         </Left>
         <Center>
+          <a href="/">
           <Logo>MADAME DES ALPILLES</Logo>
+          </a>
         </Center>
         <Right>
-          <Link to="/connexion">
-          <MenuItem>CONNEXION</MenuItem>
-          </Link>
-          <Link to="/inscription">
-          <MenuItem>INSCRIPTION</MenuItem>
-          </Link>
-          <Link to="/panier">
+          <Link to="/favoris">
           <MenuItem>
             <Badge badgeContent={quantity} color="primary">
-              <ShoppingCartOutlined />
+              <ShoppingCartIcon />
             </Badge>
           </MenuItem>
           </Link>
