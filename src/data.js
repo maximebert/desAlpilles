@@ -1,24 +1,24 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://i.ibb.co/cXFnLLV/3.png",
-    title: "Nos robes pour l'été",
-    desc: "Pas d'escuses avec nos 20% de promos sur la collection bohème",
+    img: "/julia.png",
+    title: "Panier Prénoms",
+    desc: "Pourquoi ne pas offrir un pannier personnalisé?",
     bg: "fbf0f4",
   },
   {
     id: 2,
-    img: "https://www.square-up.fr/21336-large_default/tshirt-homme-papa-au-rhum-blanc.jpg",
-    title: "Collection homme",
+    img: "/boheme.png",
+    title: "Collection Bohème",
     desc: "Des nouveautées en Pagaye!",
     bg: "fcf1ed",
   },
   {
       id: 3,
-      img: "https://media.cdnws.com/_i/111316/511/729/11/dsc0106.jpeg",
+      img: "/geraldine.png",
       title: "Collection été",
       desc: "Faites vous plaisir avec nos nouveaux paniers",
-      bg: "E5E7EB",
+      bg: "ffeeca",
     },
 
   ];
