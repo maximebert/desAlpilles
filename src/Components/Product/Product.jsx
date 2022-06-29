@@ -84,9 +84,6 @@ const Product = ({ item }) => {
           <SearchOutlined />
           </Link>
         </Icon>
-        <Icon onClick={handleClick}>
-          <FavoriteBorderOutlined />
-        </Icon>
       </Info>
     </Container>
   );
